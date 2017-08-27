@@ -126,69 +126,106 @@ class User: BaseModel{
   }
   
   func getFollowers(completionHandler: @escaping (Error?) -> Void) {
-    let client = TWTRAPIClient()
-    let endpoint = "https://api.twitter.com/1.1/followers/list.json"
-    let params: [String : Any] = [Keys.userID: id,
-                                  Keys.username: username,
-                                  Keys.cursor: "\(cursor)"]
-    var clientError : NSError?
-    
-    let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
-    
-    client.sendTwitterRequest(request) { (response: URLResponse?, data: Data?, error: Error?) -> Void in
-      if error != nil {
+    let networkStatus = Reachability().connectionStatus()
+    switch networkStatus {
+    case .Offline:
+      do {
+        let followersJSON = try StorageManager.default.arrayValue(FileType.followers)
+        for followerJSON in followersJSON {
+          followers.append(try User(followerJSON))
+        }
+        completionHandler(nil)
+      } catch {
         completionHandler(error)
-      } else {
-        do {
-          if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? JSON {
-            if let nextCursor = json["next_cursor"] as? Int {
-              self.cursor = nextCursor
+      }
+    default:
+      let client = TWTRAPIClient()
+      let endpoint = "https://api.twitter.com/1.1/followers/list.json"
+      let params: [String : Any] = [Keys.userID: id,
+                                    Keys.username: username,
+                                    Keys.cursor: "\(cursor)"]
+      if cursor == -1 {
+        followers.removeAll()
+      }
+      
+      var clientError : NSError?
+      
+      let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
+      
+      client.sendTwitterRequest(request) { (response: URLResponse?, data: Data?, error: Error?) -> Void in
+        if error != nil {
+          completionHandler(error)
+        } else {
+          do {
+            if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? JSON {
+              if let nextCursor = json["next_cursor"] as? Int {
+                self.cursor = nextCursor
+              }
+              guard let usersArray = json[Keys.users] as? [JSON] else {
+                completionHandler(iASError.missing(Keys.users))
+                return
+              }
+              
+              try StorageManager.default.store(array: usersArray, fileName: FileType.followers)
+              
+              for userJSON in usersArray {
+                self.followers.append(try User(userJSON))
+              }
+              
+              completionHandler(nil)
+            } else {
+              completionHandler(iASError.invalid("JSON", data ?? "No data"))
             }
-            guard let usersArray = json[Keys.users] as? [JSON] else {
-              completionHandler(iASError.missing(Keys.users))
-              return
-            }
-            
-            for userJSON in usersArray {
-              self.followers.append(try User(userJSON))
-            }
-            completionHandler(nil)
-          } else {
-            completionHandler(iASError.invalid("JSON", data ?? "No data"))
+          } catch {
+            completionHandler(error)
           }
-        } catch let jsonError as NSError {
-          print("json error: \(jsonError.localizedDescription)")
         }
       }
     }
   }
   
   func getTweets(completionHandler: @escaping (Error?) -> Void) {
-    let client = TWTRAPIClient()
-    let endpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-    let params: [String : Any] = [Keys.userID: id,
-                                  Keys.username: username,
-                                  Keys.count: "10"]
-    var clientError : NSError?
-    
-    let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
-    
-    client.sendTwitterRequest(request) { (response: URLResponse?, data: Data?, error: Error?) -> Void in
-      if error != nil {
+    let networkStatus = Reachability().connectionStatus()
+    switch networkStatus {
+    case .Offline:
+      do {
+        let tweetsJSON = try StorageManager.default.arrayValue(self.id + FileType.tweets)
+        for tweetjson in tweetsJSON {
+          tweets.append(tweetjson["text"] as? String ?? "")
+        }
+        completionHandler(nil)
+      } catch {
         completionHandler(error)
-      } else {
-        do {
-          if let tweetsArrayjson = try JSONSerialization.jsonObject(with: data!, options: []) as? [JSON] {
-            
-            for tweetjson in tweetsArrayjson {
-              self.tweets.append(tweetjson["text"] as? String ?? "")
+      }
+    default:
+      let client = TWTRAPIClient()
+      let endpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+      let params: [String : Any] = [Keys.userID: id,
+                                    Keys.username: username,
+                                    Keys.count: "10"]
+      var clientError : NSError?
+      
+      let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
+      
+      client.sendTwitterRequest(request) { (response: URLResponse?, data: Data?, error: Error?) -> Void in
+        if error != nil {
+          completionHandler(error)
+        } else {
+          do {
+            if let tweetsArrayjson = try JSONSerialization.jsonObject(with: data!, options: []) as? [JSON] {
+              
+              try StorageManager.default.store(array: tweetsArrayjson, fileName: self.id + FileType.tweets)
+              
+              for tweetjson in tweetsArrayjson {
+                self.tweets.append(tweetjson["text"] as? String ?? "")
+              }
+              completionHandler(nil)
+            } else {
+              completionHandler(iASError.invalid("JSON", data ?? "No data"))
             }
-            completionHandler(nil)
-          } else {
-            completionHandler(iASError.invalid("JSON", data ?? "No data"))
+          } catch let jsonError as NSError {
+            print("json error: \(jsonError.localizedDescription)")
           }
-        } catch let jsonError as NSError {
-          print("json error: \(jsonError.localizedDescription)")
         }
       }
     }
