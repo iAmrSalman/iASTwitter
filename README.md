@@ -57,18 +57,3 @@ $ pod install
 ## Inpiration 
 
 I got my inpiration from [Death Note Movie](https://www.youtube.com/watch?v=gvxNaSIB_WI) & [Anime](https://www.youtube.com/watch?v=tJZtOrm-WPk)
-
-## Notes form @iAmrSalman
-* **install [BartyCrouch](https://github.com/Flinesoft/BartyCrouch#installation) before build**
-
-Install Homebrew first if you don't have it already (more about Homebrew [here](http://brew.sh)):
-
-```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-To install Bartycrouch the first time, simply run the command:
-
-```bash
-$ brew install bartycrouch
-```
