@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "@Username"; ObjectID = "ED0-5k-T9o"; */
+"ED0-5k-T9o.text" = "@Username";
+
+/* Class = "UILabel"; text = "The human whose name is touched shall die"; ObjectID = "Oh3-0e-rFO"; */
+"Oh3-0e-rFO.text" = "أي انسان تلمس اسمه سوف يموت";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SUs-pm-VE1"; */
+"SUs-pm-VE1.text" = "Label";
+
+/* Class = "UILabel"; text = "Lord kIRA"; ObjectID = "dj5-yW-w7b"; */
+"dj5-yW-w7b.text" = "اللورد كيرا";
+
+/* Class = "UILabel"; text = "@iAmrSalman"; ObjectID = "lGH-9g-zp1"; */
+"lGH-9g-zp1.text" = "@iAmrSalman";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "qW3-yu-TaG"; */
+"qW3-yu-TaG.title" = "";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TfY-bj-z6K"; */
+"TfY-bj-z6K.text" = "";
+
+/* Class = "UIBarButtonItem"; title = "Spare"; ObjectID = "lnw-uj-frG"; */
+"lnw-uj-frG.title" = "اعفو عنه";
+
+/* Class = "UIBarButtonItem"; title = "Kill"; ObjectID = "tjM-Ht-lL9"; */
+"tjM-Ht-lL9.title" = "اقتله";
