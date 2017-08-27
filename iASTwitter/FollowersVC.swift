@@ -135,7 +135,9 @@ class FollowersVC: BaseViewController {
       tableView.insertRows(at: indexPaths, with: .fade)
     }
     
-    refreshControl.endRefreshing()
+    if refreshControl != nil {
+      refreshControl.endRefreshing()
+    }
 
   }
 
