@@ -3,7 +3,8 @@ use_frameworks!
 
 target 'iASTwitter' do
   
-  pod 'Dots'
   pod 'PKHUD'
+  pod 'TwitterKit'
+  pod 'Kingfisher'
 
 end
