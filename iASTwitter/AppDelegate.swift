@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     Twitter.sharedInstance().start(withConsumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret)
     
+    UINavigationBar.appearance().barTintColor = .black
+    UINavigationBar.appearance().tintColor = .white
+    
     return true
   }
 
