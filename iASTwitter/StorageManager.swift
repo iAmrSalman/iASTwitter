@@ -10,6 +10,8 @@ import Foundation
 
 struct FileType {
   static let user = "user"
+  static let followers = "followers"
+  static let tweets = "tweets"
 }
 
 enum JSONType {
@@ -96,7 +98,7 @@ class StorageManager {
     do {
       let theJSONData = try
         JSONSerialization.data(withJSONObject: dictionary ,options: JSONSerialization.WritingOptions.prettyPrinted)
-      let theJSONText = String(data: theJSONData, encoding: String.Encoding.ascii)
+      let theJSONText = String(data: theJSONData, encoding: String.Encoding.utf8)
       return theJSONText
     } catch {
       throw error
@@ -107,7 +109,7 @@ class StorageManager {
     do {
       let theJSONData = try
         JSONSerialization.data(withJSONObject: array ,options: JSONSerialization.WritingOptions.prettyPrinted)
-      let theJSONText = String(data: theJSONData, encoding: String.Encoding.ascii)
+      let theJSONText = String(data: theJSONData, encoding: String.Encoding.utf8)
       return theJSONText
     } catch {
       throw error
@@ -117,7 +119,7 @@ class StorageManager {
   fileprivate func write(jsonText: String?, toUrl url: URL?) throws {
     guard let unwrappedURL = url else { throw iASError.invalid("URL", url ?? "no url") }
     do {
-      try jsonText?.write(to: unwrappedURL , atomically: true, encoding: String.Encoding.ascii)
+      try jsonText?.write(to: unwrappedURL , atomically: true, encoding: String.Encoding.utf8)
     } catch {
       throw error
     }
@@ -133,7 +135,7 @@ class StorageManager {
     }
   }
   
-  func store(array: [Any], fileName: String) throws {
+  func store(array: [JSON], fileName: String) throws {
     do {
       try write(jsonText: try getJSONText(fromArray: array), toUrl: try getUrl(forKey: fileName))
     } catch {
