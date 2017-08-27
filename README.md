@@ -2,6 +2,8 @@
 
 Simple twitter client
 
+![Death Note](https://ws3.sinaimg.cn/large/006tNc79gy1fiy8z2uj7aj307z07zq3h.jpg)
+
 ## TODO
 
 ### Login
