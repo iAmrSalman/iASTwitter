@@ -22,6 +22,7 @@
 		9275178A1F524ECD00F1FB91 /* FollowerDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927517891F524ECD00F1FB91 /* FollowerDetailsVC.swift */; };
 		9275178C1F52501700F1FB91 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275178B1F52501700F1FB91 /* UIImageExtension.swift */; };
 		9275178E1F526D2000F1FB91 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275178D1F526D2000F1FB91 /* TweetCell.swift */; };
+		927517901F529F7600F1FB91 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9275178F1F529F7600F1FB91 /* SafariServices.framework */; };
 		92B46DF31F5198890037B205 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46DF21F5198890037B205 /* LoginVC.swift */; };
 		92B46DF61F51EFA90037B205 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46DF51F51EFA90037B205 /* StorageManager.swift */; };
 		92B46DF91F51EFEB0037B205 /* iASError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46DF81F51EFEB0037B205 /* iASError.swift */; };
@@ -55,6 +56,7 @@
 		927517891F524ECD00F1FB91 /* FollowerDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDetailsVC.swift; sourceTree = "<group>"; };
 		9275178B1F52501700F1FB91 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9275178D1F526D2000F1FB91 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		9275178F1F529F7600F1FB91 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		92B46DF21F5198890037B205 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		92B46DF51F51EFA90037B205 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		92B46DF81F51EFEB0037B205 /* iASError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iASError.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927517901F529F7600F1FB91 /* SafariServices.framework in Frameworks */,
 				4CB02F4E3F98DC991869C3AD /* Pods_iASTwitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +294,7 @@
 		FF106CD8422918109784CB39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9275178F1F529F7600F1FB91 /* SafariServices.framework */,
 				926A4D505AF668704686A78B /* Pods_iASTwitter.framework */,
 			);
 			name = Frameworks;

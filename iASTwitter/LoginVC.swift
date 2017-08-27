@@ -15,30 +15,17 @@ class LoginVC: BaseViewController {
   //MARK: - Properties
   
   var user = User()
-  var loginBtn: TWTRLogInButton!
   
   //MARK: - Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    login()
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    
   }
   
-
-  //MARK: - Helpers
+  //MARK: - Actions
   
-  func login() {
-    let loginButton = user.loginButton()
-    self.loginBtn = loginButton
-    self.loginBtn.center = self.view.center
-    self.view.addSubview(self.loginBtn)
-  }
-  
-  func rotated() {
-    self.loginBtn.center = self.view.center
+  @IBAction func login(_ sender: Any) {
+    user.login()
   }
 }

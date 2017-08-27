@@ -44,9 +44,18 @@
                                     <constraint firstAttribute="height" constant="75" id="yKS-jY-DW0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71x-fZ-tXv">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <state key="normal" image="ShinigamiRingo"/>
+                                <connections>
+                                    <action selector="login:" destination="alP-kB-UKu" eventType="touchUpInside" id="cHf-Ja-25r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="71x-fZ-tXv" firstAttribute="centerY" secondItem="HZq-ZF-MRU" secondAttribute="centerY" id="I2N-LP-DF3"/>
+                            <constraint firstItem="71x-fZ-tXv" firstAttribute="centerX" secondItem="HZq-ZF-MRU" secondAttribute="centerX" id="Os5-hw-e8h"/>
                             <constraint firstItem="I08-qq-XNG" firstAttribute="top" secondItem="YCi-H4-ySh" secondAttribute="bottom" id="Pts-0g-Fek"/>
                             <constraint firstAttribute="trailing" secondItem="I08-qq-XNG" secondAttribute="trailing" id="aCW-By-cTU"/>
                             <constraint firstItem="I08-qq-XNG" firstAttribute="leading" secondItem="HZq-ZF-MRU" secondAttribute="leading" id="ibZ-rC-YQF"/>
@@ -59,4 +68,7 @@
             <point key="canvasLocation" x="808.79999999999995" y="187.55622188905548"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ShinigamiRingo" width="200" height="200"/>
+    </resources>
 </document>
