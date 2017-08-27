@@ -59,3 +59,9 @@ $ pod install
 ## Inpiration 
 
 I got my inpiration from [Death Note Movie](https://www.youtube.com/watch?v=gvxNaSIB_WI) & [Anime](https://www.youtube.com/watch?v=tJZtOrm-WPk)
+
+## Nots form [@iAmrSalman](https://github.com/iAmrSalman)
+
+- Make sure you selects `none` for *team* inside project *target* sining
+
+> Reason: *Death Note* has no App id that identify white list and block list behaviors which causes to terminat the app as long as it's not in sandboxing enviornment
