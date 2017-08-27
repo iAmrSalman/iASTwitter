@@ -1,4 +1,4 @@
-# iASTwitter
+# iASTwitter (Death Note)
 
 Simple twitter client
 
