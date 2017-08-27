@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="height" constant="75" id="yKS-jY-DW0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71x-fZ-tXv">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71x-fZ-tXv">
                                 <rect key="frame" x="87" y="233" width="200" height="200"/>
                                 <state key="normal" image="ShinigamiRingo"/>
                                 <connections>

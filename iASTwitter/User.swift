@@ -99,8 +99,8 @@ class User: BaseModel{
     }
   }
   
-  func login() {
-    Twitter.sharedInstance().logIn { (session: TWTRSession?, error: Error?) in
+  func loginButton() -> TWTRLogInButton {
+    let loginBtn = TWTRLogInButton { (session: TWTRSession?, error: Error?) in
       if error != nil {
         HUD.flash(.labeledError(title: nil, subtitle: error?.localizedDescription), delay: 2.0)
       } else {
@@ -122,6 +122,7 @@ class User: BaseModel{
         }
       }
     }
+    return loginBtn
   }
   
   func getFollowers(completionHandler: @escaping (Error?) -> Void) {
