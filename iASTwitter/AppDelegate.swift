@@ -16,11 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
     Twitter.sharedInstance().start(withConsumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret)
     
     UINavigationBar.appearance().barTintColor = .black
     UINavigationBar.appearance().tintColor = .white
+    
+    if User.currentUser() != nil {
+      hijackWindow()
+    }
     
     return true
   }
@@ -46,7 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-
-
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    return Twitter.sharedInstance().application(app, open: url, options: options)
+  }
+  
+  //MARK: - Helpers
+  
+  fileprivate func hijackWindow() {
+    let followersVC = UIViewController.viewController(withStoryBoardname: Storyboards.followers)
+    window?.rootViewController = followersVC
+    window?.makeKeyAndVisible()
+  }
+  
 }
 
