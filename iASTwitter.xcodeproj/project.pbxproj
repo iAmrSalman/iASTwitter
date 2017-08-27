@@ -23,6 +23,7 @@
 		9275178C1F52501700F1FB91 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275178B1F52501700F1FB91 /* UIImageExtension.swift */; };
 		9275178E1F526D2000F1FB91 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275178D1F526D2000F1FB91 /* TweetCell.swift */; };
 		927517901F529F7600F1FB91 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9275178F1F529F7600F1FB91 /* SafariServices.framework */; };
+		927517921F532B3900F1FB91 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927517911F532B3900F1FB91 /* Reachability.swift */; };
 		92B46DF31F5198890037B205 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46DF21F5198890037B205 /* LoginVC.swift */; };
 		92B46DF61F51EFA90037B205 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46DF51F51EFA90037B205 /* StorageManager.swift */; };
 		92B46DF91F51EFEB0037B205 /* iASError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46DF81F51EFEB0037B205 /* iASError.swift */; };
@@ -57,6 +58,7 @@
 		9275178B1F52501700F1FB91 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		9275178D1F526D2000F1FB91 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		9275178F1F529F7600F1FB91 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		927517911F532B3900F1FB91 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		92B46DF21F5198890037B205 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		92B46DF51F51EFA90037B205 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		92B46DF81F51EFEB0037B205 /* iASError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iASError.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		92B46DFA1F51F2480037B205 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				927517911F532B3900F1FB91 /* Reachability.swift */,
 				92B46DFB1F51F2570037B205 /* Globals.swift */,
 				92B46DFD1F51F2C00037B205 /* Constants.swift */,
 			);
@@ -449,6 +452,7 @@
 				9275178E1F526D2000F1FB91 /* TweetCell.swift in Sources */,
 				927517831F523DC900F1FB91 /* UIViewExtensions.swift in Sources */,
 				9262C6A41F46B3E6005FAFFF /* User.swift in Sources */,
+				927517921F532B3900F1FB91 /* Reachability.swift in Sources */,
 				9275178A1F524ECD00F1FB91 /* FollowerDetailsVC.swift in Sources */,
 				92B46E0A1F5202700037B205 /* FollowersVC.swift in Sources */,
 				92B46DF91F51EFEB0037B205 /* iASError.swift in Sources */,
