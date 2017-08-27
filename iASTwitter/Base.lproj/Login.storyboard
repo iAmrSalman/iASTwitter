@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="alP-kB-UKu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DEATHNOTEFont.ttf">
+            <string>DEATHNOTE-Font</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="a0s-HY-k7I">
+            <objects>
+                <viewController id="alP-kB-UKu" customClass="LoginVC" customModule="iASTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YCi-H4-ySh"/>
+                        <viewControllerLayoutGuide type="bottom" id="JYr-Sr-yoq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HZq-ZF-MRU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I08-qq-XNG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to DEATH NOTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JAP-yf-5UY">
+                                        <rect key="frame" x="8" y="27" width="359" height="40"/>
+                                        <fontDescription key="fontDescription" name="DEATHNOTE-Font" family="DEATHNOTE Font" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JAP-yf-5UY" secondAttribute="bottom" constant="8" id="eZ7-RX-WTQ"/>
+                                    <constraint firstItem="JAP-yf-5UY" firstAttribute="leading" secondItem="I08-qq-XNG" secondAttribute="leading" constant="8" id="ftC-IE-ejs"/>
+                                    <constraint firstAttribute="trailing" secondItem="JAP-yf-5UY" secondAttribute="trailing" constant="8" id="hm5-I8-QFp"/>
+                                    <constraint firstAttribute="height" constant="75" id="yKS-jY-DW0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I08-qq-XNG" firstAttribute="top" secondItem="YCi-H4-ySh" secondAttribute="bottom" id="Pts-0g-Fek"/>
+                            <constraint firstAttribute="trailing" secondItem="I08-qq-XNG" secondAttribute="trailing" id="aCW-By-cTU"/>
+                            <constraint firstItem="I08-qq-XNG" firstAttribute="leading" secondItem="HZq-ZF-MRU" secondAttribute="leading" id="ibZ-rC-YQF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vs8-9p-8l0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hia-QY-Uxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.79999999999995" y="187.55622188905548"/>
+        </scene>
+    </scenes>
+</document>
