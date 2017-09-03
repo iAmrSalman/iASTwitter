@@ -56,9 +56,9 @@ Then, run the following command:
 $ pod install
 ```
 
-## Inpiration 
+## Inspiration 
 
-I got my inpiration from [Death Note Movie](https://www.youtube.com/watch?v=gvxNaSIB_WI) & [Anime](https://www.youtube.com/watch?v=tJZtOrm-WPk)
+I got my inspiration from [Death Note Movie](https://www.youtube.com/watch?v=gvxNaSIB_WI) & [Anime](https://www.youtube.com/watch?v=tJZtOrm-WPk)
 
 ## Nots form [@iAmrSalman](https://github.com/iAmrSalman)
 
