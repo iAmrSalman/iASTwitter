@@ -23,7 +23,7 @@ class LoginVC: BaseViewController {
     super.viewDidLoad()
     login()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(LoginVC.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     
   }
   
@@ -36,7 +36,7 @@ class LoginVC: BaseViewController {
     self.view.addSubview(self.loginBtn)
   }
   
-  func rotated() {
+    @objc func rotated() {
     self.loginBtn.center = self.view.center
   }
 }

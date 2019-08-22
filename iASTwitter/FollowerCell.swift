@@ -33,7 +33,7 @@ class FollowerCell: UITableViewCell {
     bioLbl.text = user.bio
     if user.isKilled {
       let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "@\(user.username)")
-      attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, attributeString.length))
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
       usernameLbl.attributedText = attributeString
     }
   }

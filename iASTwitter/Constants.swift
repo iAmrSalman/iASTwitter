@@ -9,8 +9,8 @@
 import Foundation
 
 struct Constants {
-  static let consumerKey = "VWfofGlVvdRhgvpVIYQqrgp0w"
-  static let consumerSecret = "3Br4YLjbFMFLgEa9wnGLdrRakchSpBcbzOmvjGdgrUlUoKeb4W"
+  static let consumerKey = "DauMdcabtLayUbPKt55f1IOfv"
+  static let consumerSecret = "1KD4cDxHKt6eBo9lfnvTZF6LsKyGep6XvGhJpXNfKo8VCMPSGa"
 }
 
 struct Keys {

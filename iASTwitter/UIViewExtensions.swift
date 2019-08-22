@@ -140,13 +140,13 @@ extension UIView {
   }
   
   func fadeIn(_ view: UIView, duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
-    UIView.transition(with: view, duration: duration, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+    UIView.transition(with: view, duration: duration, options: UIView.AnimationOptions.transitionCrossDissolve, animations: {
       view.isHidden = false
     }, completion: completion)
   }
   
   func fadeOut(_ view: UIView, duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
-    UIView.transition(with: view, duration: duration, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+    UIView.transition(with: view, duration: duration, options: UIView.AnimationOptions.transitionCrossDissolve, animations: {
       view.isHidden = true
     }, completion: completion)
   }

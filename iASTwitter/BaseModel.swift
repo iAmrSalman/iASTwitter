@@ -6,7 +6,7 @@
 //  Copyright © 2017 Amr Salman. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class BaseModel: NSObject {
   

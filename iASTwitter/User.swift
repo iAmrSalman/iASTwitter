@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import TwitterKit
 
 class User: BaseModel{
   
@@ -150,7 +151,7 @@ class User: BaseModel{
       
       var clientError : NSError?
       
-      let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
+      let request = client.urlRequest(withMethod: "GET", urlString: endpoint, parameters: params, error: &clientError)
       
       client.sendTwitterRequest(request) { (response: URLResponse?, data: Data?, error: Error?) -> Void in
         if error != nil {
@@ -205,7 +206,7 @@ class User: BaseModel{
                                     Keys.count: "10"]
       var clientError : NSError?
       
-      let request = client.urlRequest(withMethod: "GET", url: endpoint, parameters: params, error: &clientError)
+      let request = client.urlRequest(withMethod: "GET", urlString: endpoint, parameters: params, error: &clientError)
       
       client.sendTwitterRequest(request) { (response: URLResponse?, data: Data?, error: Error?) -> Void in
         if error != nil {
